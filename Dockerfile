@@ -114,12 +114,10 @@ RUN sh -c 'echo yes | ./sgx_linux_x64_sdk_*.bin'
 ARG DEBUG
 ARG MODE
 ARG PRERELEASE
-ARG SIM_LIB
 
 COPY ./src/ /app/src/
 WORKDIR /app/src
 RUN SGX_DEBUG=$DEBUG SGX_MODE=$MODE SGX_PRERELEASE=$PRERELEASE make
-ENV LD_LIBRARY_PATH=$SIM_LIB
 
 WORKDIR /app/src/enclave_sqlite
 CMD ./app /app/data/database.sqlite

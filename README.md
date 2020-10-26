@@ -2,7 +2,8 @@
 
 ###  Prerequisites
 1. Install [Docker and Compose](https://docs.docker.com/) and configure them properly following their respective installation guide.
-2. Install [SGX Flexible Launch Control driver](https://github.com/intel/SGXDataCenterAttestationPrimitives/tree/master/driver/linux). **Note**: See below to run with the Legacy Launch Control driver.
+2. Install SGX driver. **Tested with:** https://download.01.org/intel-sgx/sgx-linux/2.8/distro/ubuntu18.04-server/
+
 
 ### Run with Docker Compose
 This will start AESM and the SGX_SQLite command line interface.

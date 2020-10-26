@@ -62,8 +62,6 @@ services:
         - MODE=HW
         # Debug and prerelease does not work together
         - PRERELEASE=1
-        # Needed for simulation mode
-        #- SIM_LIB=/opt/intel/sgxsdk/lib64
     depends_on:
       - aesm
     devices:
