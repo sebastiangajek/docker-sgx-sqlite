@@ -36,7 +36,8 @@ services:
   aesm:
     image: sgx_aesm
     build:
-      context: .
+      context: ../../
+      dockerfile: ./docker/hw/Dockerfile
       target: aesm
     devices:
       #- /dev/sgx/enclave
@@ -54,7 +55,8 @@ services:
   sqlite:
     image: sgx_sqlite
     build:
-      context: .
+      context: ../../
+      dockerfile: ./docker/hw/Dockerfile
       target: sqlite
       args:
         - DEBUG=0
@@ -69,7 +71,7 @@ services:
       - /dev/isgx
     volumes:
       - aesmd-socket:/var/run/aesmd
-      - ./data:/app/data
+      - ../../data:/app/data
     stdin_open: true
     tty: true
     environment:
